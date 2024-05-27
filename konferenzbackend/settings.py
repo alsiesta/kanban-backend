@@ -22,10 +22,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:4200','127.0.0.1',]
+ALLOWED_HOSTS = ['localhost:4200','127.0.0.1','orange-beach-0362aa803.5.azurestaticapps.net']
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:4200','https://kanban.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://kanban-backend.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://kanban-backend.azurewebsites.net','https://orange-beach-0362aa803.5.azurestaticapps.net']
 
 # CORS_ALLOW_ALL_ORIGINS = True
 

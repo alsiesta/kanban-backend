@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/2e9b285c-f97f-43b3-a9b5-32166bc13c9c/resourceGroups/rg-dla/providers/Microsoft.Web/sites/kanban-backend",
+  "appService.deploySubpath": "."
+}
