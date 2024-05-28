@@ -20,7 +20,7 @@ portalocker==2.8.2
 pycparser==2.22
 PyJWT==2.8.0
 python-dotenv==1.0.1
-pywin32==306
+# pywin32==306
 requests==2.31.0
 six==1.16.0
 sqlparse==0.5.0

@@ -1,0 +1,7 @@
+[defaults]
+group = as_rg_9109
+sku = P1v2
+appserviceplan = as_asp_1508
+location = eastus
+web = black-tree-95db93d155964049acb7115fcdb3b1b8
+
