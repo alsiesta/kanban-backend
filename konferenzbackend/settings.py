@@ -25,7 +25,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost:4200','127.0.0.1','kanban240527.azurewebsites.net','black-tree-95db93d155964049acb7115fcdb3b1b8.azurewebsites.net','orange-beach-0362aa803.5.azurestaticapps.net']
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:4200','https://kanban240527backend.azurewebsites.net/tasks']
+CORS_ALLOWED_ORIGINS = ['http://localhost:4200','https://orange-beach-0362aa803.5.azurestaticapps.net']
 CSRF_TRUSTED_ORIGINS = ['https://kanban240527backend.azurewebsites.net','https://black-tree-95db93d155964049acb7115fcdb3b1b8.azurewebsites.net']
 
 # CORS_ALLOW_ALL_ORIGINS = True
