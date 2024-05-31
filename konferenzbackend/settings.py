@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-lji85=9nb@kemrp9-n^(0gea#6h4l%!h8epmbegek1zp7j(mpi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:4200','127.0.0.1','kanban240527.azurewebsites.net','black-tree-95db93d155964049acb7115fcdb3b1b8.azurewebsites.net','orange-beach-0362aa803.5.azurestaticapps.net']
+ALLOWED_HOSTS = ['localhost:4200','127.0.0.1','kanban240527.azurewebsites.net','black-tree-95db93d155964049acb7115fcdb3b1b8.azurewebsites.net','orange-beach-0362aa803.5.azurestaticapps.net','icy-dune-07e4a2503.5.azurestaticapps.net']
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:4200','https://orange-beach-0362aa803.5.azurestaticapps.net']
 CSRF_TRUSTED_ORIGINS = ['https://kanban240527backend.azurewebsites.net','https://black-tree-95db93d155964049acb7115fcdb3b1b8.azurewebsites.net']
