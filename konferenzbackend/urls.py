@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from home.views import HomeContentView
-from posts.views import PostItemView, LoginView, PostItemUpdateView
-from kanban.views import TaskListCreateView, TaskDetailView, BulkUpdateTaskView
+from posts.views import PostItemView, PostItemUpdateView
+from kanban.views import TaskListCreateView, TaskDetailView, BulkUpdateTaskView, UserListView, LoginView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,4 +17,5 @@ urlpatterns = [
     path('tasks/', TaskListCreateView.as_view(), name='task-list-create'),
     path('tasks/<int:pk>/', TaskDetailView.as_view(), name='task-detail'),
     path('tasks/bulk_update/', BulkUpdateTaskView.as_view(), name='task-bulk-update'),
+    path('users/', UserListView.as_view(), name='user-list'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

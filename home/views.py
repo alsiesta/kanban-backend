@@ -15,8 +15,8 @@ from .serializers import HomeContentSerializer
 from .models import HomeContent
 
 class HomeContentView(APIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     # def get(self, request, format=None):
     #     content = HomeContent.objects.all()
@@ -31,19 +31,6 @@ class HomeContentView(APIView):
             content = HomeContent.objects.all()
             serializer = HomeContentSerializer(content, many=True)
             return Response(serializer.data)
-
-    
-    # def get_image(self, request, image_name, format=None):
-    #     # This part handles image serving
-    #     if settings.DEBUG:
-    #         image_path = os.path.join(settings.BASE_DIR, 'konferenzbackend', 'static', 'img', image_name)
-    #     else:
-    #         image_path = os.path.join(settings.STATIC_ROOT, 'img', image_name)
-    #     try:
-    #         with open(image_path, 'rb') as file:
-    #             return FileResponse(file, content_type='image/jpeg')
-    #     except FileNotFoundError:
-    #         raise Http404("Image does not exist")
     
     
     def get_image(self, request, image_name, format=None):
