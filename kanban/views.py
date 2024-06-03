@@ -1,5 +1,5 @@
 # kanban/views.py
-from rest_framework.authentication import TokenAuthentication
+from rest_framework.authentication import TokenAuthentication, SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
 from rest_framework import status
@@ -8,6 +8,9 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from .permissions import IsSuperUserOrReadOnly
+from django.contrib.auth import get_user_model, logout
+
+
 
 
 from .models import Task
@@ -31,8 +34,14 @@ class LoginView(ObtainAuthToken):
             'user_type': 'superuser' if user.is_superuser else 'normaluser',
         })
 
+class LogoutView(APIView):
+    def get(self, request):
+        logout(request)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
 class TaskListCreateView(generics.ListCreateAPIView):
     authentication_classes = [TokenAuthentication]
+    # authentication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
@@ -53,7 +62,16 @@ class UserListView(APIView):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-
+class UserCreateView(APIView):
+    def post(self, request):
+        User = get_user_model()
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
 class BulkUpdateTaskView(APIView):
     """
     Update multiple tasks at once.
